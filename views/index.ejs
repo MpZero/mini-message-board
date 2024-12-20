@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title><%= title%></title>
+  </head>
+  <body>
+    <%- include("./navbar") %>
+    <h1>Homepage</h1>
+    <ul>
+      <%messages.map((message, index) =>{ %>
+      <li>
+        <p><b>User:</b> <%= message.user %></p>
+        <p><b>Message:</b> <%= message.text %></p>
+        <p><b>Added on:</b> <%= message.added.toDateString() %></p>
+        <a href="/new/<%= index %>"> msg</a>
+      </li>
+      <%})%>
+    </ul>
+  </body>
+</html>
